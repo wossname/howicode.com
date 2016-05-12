@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import '//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin';
+@import url(//fonts.googleapis.com/css?family=Source+Code+Pro);
 
 // Global styles
 @import "style.css";
@@ -45,6 +46,10 @@ body {
 .coming-soon,
 .coming-soon-plugin {
 	padding: 20px;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.coming-soon h1 {
 	text-align: center;
 }
 
@@ -74,6 +79,7 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 26px;
+  text-align: justify;
 }
 
 /* Small devices (tablets, 768px and less) */
