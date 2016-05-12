@@ -107,9 +107,16 @@
     <%= yield %>
 
     <div class="container">
-      <p style="text-align: center; color: #fff">
-        Copyright  &copy; 2016 <%= utm_link_to 'Wossname Industries', 'https://woss.name/' %>. All rights reserved.
-      </p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"> </div>
+        </div>
+        <div class="col-md-6">
+          <p style="text-align: right; color: #fff">
+            Copyright  &copy; 2016 <%= utm_link_to 'Wossname Industries', 'https://woss.name/' %>. All rights reserved.
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- JS Global Compulsory -->
