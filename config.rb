@@ -8,6 +8,21 @@ config[:url] = "https://#{config[:hostname]}"
 config[:email_address] = "hello@#{config[:domain]}"
 config[:cloudfront_distribution] = 'ES5EDHXD7WPUA'
 
+# Metadata
+config[:author]      = 'Graeme Mathieson'
+config[:author_url]  = 'https://woss.name/'
+config[:company]     = 'Wossname Industries'
+config[:short_title] = 'How I Code'
+config[:long_title]  = "#{config[:short_title]}: A conversation on the art and craft of software development"
+config[:description] = <<-TEXT.split("\n").map(&:strip).join(' ')
+  I want to go on a holistic exploration of how developers write code in a
+  sustainable, enjoyable way. I want to hear about their physical environment;
+  the tools they use for development; the SaaS apps they use to make their lives
+  easier; the productivity methodologies they subscribe to; how they balance work
+  and life; and what they do when they're not at the computer.
+TEXT
+config[:gravatar] = 'https://www.gravatar.com/avatar/c0f5c2452698c674aba6297eca083776.png'
+
 # UTM-related bits
 config[:default_utm_source] = config[:domain]
 config[:default_utm_medium] = 'website'
@@ -77,6 +92,11 @@ helpers do
     else
       link_to title, url, options
     end
+  end
+
+  def xml_timestamp(dateish = Time.now)
+    timestamp = dateish.respond_to?(:strftime) ? dateish : Date.parse(dateish)
+    timestamp.strftime('%FT%H:%M:%S%z') 
   end
 end
 
