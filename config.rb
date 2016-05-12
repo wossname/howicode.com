@@ -121,8 +121,8 @@ activate :cloudfront do |cf|
   cf.filter = /\.(html|xml|txt)$/
 end
 
-caching_policy 'text/html',  max_age: 0, must_revalidate: true
-caching_policy 'text/xml',   max_age: 0, must_revalidate: true
-caching_policy 'text/plain', max_age: 0, must_revalidate: true
+caching_policy 'text/html',       max_age: 0, must_revalidate: true
+caching_policy 'application/xml', max_age: 0, must_revalidate: true
+caching_policy 'text/plain',      max_age: 0, must_revalidate: true
 
 default_caching_policy max_age: (60 * 60 * 24 * 365)
