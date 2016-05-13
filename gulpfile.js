@@ -1,7 +1,10 @@
-var gulp   = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var del    = require('del');
+var gulp       = require('gulp'),
+  concat       = require('gulp-concat'),
+  uglify       = require('gulp-uglify'),
+  postcss      = require('gulp-postcss'),
+  autoprefixer = require('autoprefixer'),
+  cssnano      = require('cssnano'),
+  del          = require('del');
 
 var javascripts = {
   "all.js": [
@@ -58,6 +61,10 @@ gulp.task('stylesheets', ['all.css']);
 gulp.task('all.css', function() {
   return gulp
     .src(stylesheets['all.css'])
+    .pipe(postcss([
+      autoprefixer(),
+      cssnano()
+    ]))
     .pipe(concat('all.css'))
     .pipe(gulp.dest('intermediate/stylesheets/'));
 });
