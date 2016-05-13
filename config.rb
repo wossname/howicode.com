@@ -114,7 +114,6 @@ end
 configure :build do
   # Minify ALL THE THINGS.
   # activate :minify_css
-  # activate :minify_javascript
   activate :minify_html
 end
 

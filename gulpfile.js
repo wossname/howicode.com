@@ -1,5 +1,6 @@
 var gulp   = require('gulp');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var del    = require('del');
 
 var javascripts = {
@@ -27,6 +28,7 @@ gulp.task('all.js', function() {
   return gulp
     .src(javascripts['all.js'])
     .pipe(concat('all.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('intermediate/javascripts/'));
 });
 
@@ -34,6 +36,7 @@ gulp.task('ie.js', function() {
   return gulp
     .src(javascripts['ie.js'])
     .pipe(concat('ie.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('intermediate/javascripts/'));
 });
 
