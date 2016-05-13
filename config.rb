@@ -8,6 +8,11 @@ config[:url] = "https://#{config[:hostname]}"
 config[:email_address] = "hello@#{config[:domain]}"
 config[:cloudfront_distribution] = 'ES5EDHXD7WPUA'
 
+# Mailing list signup form configuration
+config[:mailchimp_url] = "//howicode.us1.list-manage.com/subscribe/post?u=e2954746a3d6f76209fcd2a6a&amp;id=1038bb42e1"
+config[:mailchimp_group_id] = "5137"
+config[:mailchimp_antispam] = "b_e2954746a3d6f76209fcd2a6a_1038bb42e1"
+
 # Metadata
 config[:author]      = 'Graeme Mathieson'
 config[:author_url]  = 'https://woss.name/'
