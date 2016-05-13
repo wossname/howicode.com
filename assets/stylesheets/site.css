@@ -1,14 +1,6 @@
 @charset "utf-8";
 
-@import '//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin';
-@import url(//fonts.googleapis.com/css?family=Source+Code+Pro);
-
-// Global styles
-@import "style.css";
-
-// Plugins
-@import "bootstrap.min.css";
-@import "animate.css";
+@import 'all.css';
 
 /*Wrapping element for Sticky-Footer*/
 html {
@@ -113,5 +105,3 @@ body {
 		position: static;
 	}
 }
-
-@import "default.css";
