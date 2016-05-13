@@ -1,5 +1,6 @@
 var gulp   = require('gulp');
 var concat = require('gulp-concat');
+var del    = require('del');
 
 var javascripts = {
   "all.js": [
@@ -39,4 +40,8 @@ gulp.task('ie.js', function() {
 gulp.task('watch', function() {
   gulp.watch(javascripts['all.js'], ['all.js']);
   gulp.watch(javascripts['ie.js'],  ['ie.js']);
+});
+
+gulp.task('clean', function() {
+  return del(['intermediate']);
 });
