@@ -26,6 +26,7 @@ var stylesheets = {
     'assets/stylesheets/blocks.css',
     'assets/stylesheets/bootstrap.min.css',
     'assets/stylesheets/animate.css',
+    'assets/stylesheets/site.css',
     'assets/stylesheets/default.css'
   ]
 };
