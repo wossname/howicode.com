@@ -18,9 +18,21 @@ var javascripts = {
   ]
 };
 
+var stylesheets = {
+  'all.css': [
+    'assets/stylesheets/fonts.css',
+    'assets/stylesheets/style.css',
+    'assets/stylesheets/app.css',
+    'assets/stylesheets/blocks.css',
+    'assets/stylesheets/bootstrap.min.css',
+    'assets/stylesheets/animate.css',
+    'assets/stylesheets/default.css'
+  ]
+};
+
 gulp.task('default', ['build', 'watch']);
 
-gulp.task('build', ['javascripts']);
+gulp.task('build', ['javascripts', 'stylesheets']);
 
 gulp.task('javascripts', ['all.js', 'ie.js']);
 
@@ -40,9 +52,19 @@ gulp.task('ie.js', function() {
     .pipe(gulp.dest('intermediate/javascripts/'));
 });
 
+gulp.task('stylesheets', ['all.css']);
+
+gulp.task('all.css', function() {
+  return gulp
+    .src(stylesheets['all.css'])
+    .pipe(concat('all.css'))
+    .pipe(gulp.dest('intermediate/stylesheets/'));
+});
+
 gulp.task('watch', function() {
   gulp.watch(javascripts['all.js'], ['all.js']);
   gulp.watch(javascripts['ie.js'],  ['ie.js']);
+  gulp.watch(stylesheets['all.css'], ['all.css']);
 });
 
 gulp.task('clean', function() {
