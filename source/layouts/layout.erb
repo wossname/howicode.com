@@ -123,10 +123,10 @@
       </div>
     </div>
 
-    <%= javascript_include_tag 'jquery.min', 'jquery-migrate.min', 'bootstrap.min', 'jquery.backstretch.min', 'app' %>
+    <%= javascript_include_tag :all %>
 
     <!--[if lt IE 9]>
-      <%= javascript_include_tag 'respond', 'html5shiv', 'placeholder-IE-fixes' %>
+      <%= javascript_include_tag :ie %>
     <![endif]-->
 
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

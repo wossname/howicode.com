@@ -52,6 +52,11 @@ activate :directory_indexes
 activate :asset_hash
 activate :gzip
 
+activate :external_pipeline,
+  name: :gulp,
+  command: "./node_modules/gulp/bin/gulp.js #{build? ? 'build' : ''}",
+  source: 'intermediate/'
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
@@ -109,7 +114,6 @@ end
 configure :build do
   # Minify ALL THE THINGS.
   # activate :minify_css
-  # activate :minify_javascript
   activate :minify_html
 end
 

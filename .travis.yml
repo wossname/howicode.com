@@ -4,6 +4,8 @@ cache:
   apt: true
   directories:
     - build
+    - node_modules
+install: bundle install --jobs=3 --retry=3 && npm install
 script: bundle exec rake deploy
 branches:
   only:
