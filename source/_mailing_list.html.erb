@@ -33,10 +33,10 @@
       <div class="col-sm-6 col-sm-offset-4">
         <div class="checkbox" style="text-align: left">
           <label>
-            <input type="hidden" value="2" name="group[<%= config[:mailchimp_group_id] %>]" id="mce-group[<%= config[:mailchimp_group_id] %>]-<%= config[:mailchimp_group_id] %>-1">
-            <input type="checkbox" checked="checked" value="1" name="group[<%= config[:mailchimp_group_id] %>]" id="mce-group[<%= config[:mailchimp_group_id] %>]-<%= config[:mailchimp_group_id] %>-0">
-              Yes, I'd like to hear occasional announcements about other Wossname Industries projects!
-            </label>
+            <% gid = config[:mailchimp_group_id] %>
+            <input type="hidden" value="2" name="group[<%= gid %>]" id="mce-group[<%= gid %>]-<%= gid %>-1">
+            <input type="checkbox" checked="checked" value="1" name="group[<%= gid %>]" id="mce-group[<%= gid %>]-<%= gid %>-0">
+            Yes, I'd like to hear occasional announcements about other Wossname Industries projects!
           </label>
         </div>
       </div>
