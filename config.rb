@@ -33,19 +33,10 @@ config[:default_utm_source] = config[:domain]
 config[:default_utm_medium] = 'website'
 config[:default_utm_campaign] = 'howicode'
 
-# Per-page layout changes:
-#
-# With no layout
+# Pages with no layout
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
-
-# With alternative layout
-# page "/path/to/file.html", layout: :otherlayout
-
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
 activate :directory_indexes
@@ -112,8 +103,6 @@ end
 
 # Build-specific configuration
 configure :build do
-  # Minify ALL THE THINGS.
-  # activate :minify_css
   activate :minify_html
 end
 
