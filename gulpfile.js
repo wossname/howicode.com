@@ -12,7 +12,8 @@ var javascripts = {
     'assets/javascripts/jquery-migrate.min.js',
     'assets/javascripts/jquery.backstretch.min.js',
     'assets/javascripts/bootstrap.min.js',
-    'assets/javascripts/app.js'
+    'assets/javascripts/app.js',
+    'assets/javascripts/all.js'
   ],
   "ie.js": [
     'assets/javascripts/respond.js',
@@ -30,7 +31,7 @@ var stylesheets = {
     'assets/stylesheets/bootstrap.min.css',
     'assets/stylesheets/animate.css',
     'assets/stylesheets/site.css',
-    'assets/stylesheets/default.css'
+    'assets/stylesheets/dark-red.css'
   ]
 };
 

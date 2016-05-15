@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-@import 'all.css';
-
 /*Wrapping element for Sticky-Footer*/
 html {
 	height: 100%;
