@@ -3,121 +3,16 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
   <head>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="<%= config[:author] %>">
-    <meta name="copyright" content="Copyright &copy; 2016 <%= config[:company] %>. All rights reserved.">
-    <meta property="fb:app_id" content="276208079383599">
-
-    <!-- Page meta data, for search engines, Twitter, Facebook OpenGraph, etc. -->
-    <% if title = current_page.data.title %>
-      <title><%= title %> &mdash; <%= config[:short_title] %> &mdash; <%= config[:company] %></title>
-      <meta property="og:title" content="<%= title %>">
-      <meta property="twitter:title" content="<%= title %>">
-    <% else %>
-      <title><%= config[:long_title] %> &mdash; <%= config[:company] %></title>
-      <meta property="og:title" content="<%= config[:long_title] %>">
-      <meta property="twitter:title" content="<%= config[:long_title] %>">
-    <% end %>
-
-    <% if description = current_page.data.description || config[:description] %>
-      <meta name="description" content="<%= description %>">
-      <meta property="og:description" content="<%= description %>">
-      <meta name="twitter:description" content="<%= description %>">
-    <% end %>
-
-    <meta property="og:type" content="article">
-    <meta property="article:author" content="<%= config[:author_url] %>">
-
-    <% if category = current_page.data.category %>
-      <meta property="article:section" content="<%= category %>">
-    <% end %>
-
-    <% if tags = current_page.data.tags %>
-      <meta name="keywords" content="<%= tags.join(', ') %>">
-      <% tags.each do |tag| %>
-        <meta property="article:tag" content="<%= tag %>">
-      <% end %>
-    <% end %>
-
-    <% if published_at = current_page.data.published_at || Time.now %>
-      <meta property="article:published_time" content="<%= xml_timestamp(published_at) %>">
-    <% end %>
-
-    <% if updated_at = current_page.data.updated_at || current_page.data.published_at || Time.now %>
-      <meta property="article:modified_time" content="<%= xml_timestamp(updated_at) %>">
-      <meta property="og:updated_time" content="<%= xml_timestamp(updated_at) %>">
-    <% end %>
-
-    <link rel="me" href="https://twitter.com/wossname">
-    <link rel="canonical" href="<%= config[:url] %><%= current_page.url %>">
-    <meta property="og:url" content="<%= config[:url] %><%= current_page.url %>">
-
-    <meta property="og:locale" content="en_GB">
-    <meta property="og:site_name" content="<%= config[:short_title] %>">
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@wossname">
-    <meta name="twitter:creator" content="@mathie">
-    <meta name="twitter:domain" content="<%= config[:domain] %>">
-
-    <meta property="og:image" content="<%= config[:gravatar] %>">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="80">
-    <meta property="og:image:height" content="80">
-    <meta property="twitter:image:src" content="<%= config[:gravatar] %>">
-
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <%= partial 'metadata' %>
+    <%= partial 'favicons' %>
 
     <%= stylesheet_link_tag :all %>
   </head>
 
   <body class="coming-soon-page <%= page_classes %>">
-    <!-- Google Tag Manager -->
-    <noscript>
-      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WQZC49" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                                                   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                                                     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                                                       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                                                       })(window,document,'script','dataLayer','GTM-WQZC49');
-    </script>
-    <!-- End Google Tag Manager -->
+    <%= partial 'google_tag_manager' %>
 
     <%= yield %>
-
-    <div class="container coming-soon">
-      <div class="row">
-        <div class="col-md-12">
-          <p style="text-align: right">
-            <tt>
-              Copyright  &copy; 2016 <%= utm_link_to 'Wossname Industries', 'https://woss.name/' %>. All rights reserved.
-            </tt>
-          </p>
-        </div>
-      </div>
-    </div>
 
     <%= javascript_include_tag :all %>
 
