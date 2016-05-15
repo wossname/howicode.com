@@ -4,7 +4,7 @@ config[:www_prefix]              = false
 config[:cloudfront_distribution] = 'ES5EDHXD7WPUA'
 config[:twitter_owner]           = 'wossname'
 config[:twitter_creator]         = 'mathie'
-config[:fb_app_id]               = ''
+config[:fb_app_id]               = '276208079383599'
 config[:gtm_id]                  = 'GTM-WQZC49'
 
 # Generic metadata
