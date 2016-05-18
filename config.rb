@@ -6,6 +6,7 @@ config[:twitter_owner]           = 'wossname'
 config[:twitter_creator]         = 'mathie'
 config[:fb_app_id]               = '276208079383599'
 config[:gtm_id]                  = 'GTM-WQZC49'
+config[:google_plus_id]          = '107453897972450014488'
 
 # Generic metadata
 config[:short_title]   = 'How I Code'
